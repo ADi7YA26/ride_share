@@ -23,7 +23,7 @@ export const register = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       maxAge: 24 * 60 * 60 * 1000, // 1 day expiration
-      sameSite: 'strict' 
+      sameSite: 'none' 
     };
 
     const { password, isAdmin, ...otherDetails } = newUser._doc;
@@ -49,7 +49,7 @@ export const login = async(req, res, next)=>{
       httpOnly: true,
       secure: true,
       maxAge: 24 * 60 * 60 * 1000, // 1 day expiration
-      sameSite: 'strict' 
+      sameSite: 'none' 
     };
 
     const { password, isAdmin, ...otherDetails } = user._doc;
